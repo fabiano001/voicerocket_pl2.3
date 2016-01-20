@@ -1,29 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = ContactTransaction -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => ContactTransaction %></h1>
+</div>
 
-<p>
-  <strong>Phone numer:</strong>
-  <%= @contact_transaction.phone_numer %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:phone_numer) %></dt>
+      <dd><pre class="prettyprint"><%= @contact_transaction.phone_numer %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:genre) %></dt>
+      <dd><pre class="prettyprint"><%= @contact_transaction.genre %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:duration) %></dt>
+      <dd><pre class="prettyprint"><%= @contact_transaction.duration %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:charge) %></dt>
+      <dd><pre class="prettyprint"><%= @contact_transaction.charge %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Genre:</strong>
-  <%= @contact_transaction.genre %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              contact_transactions_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_contact_transaction_path(@contact_transaction), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              contact_transaction_path(@contact_transaction),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Duration:</strong>
-  <%= @contact_transaction.duration %>
-</p>
-
-<p>
-  <strong>Charge:</strong>
-  <%= @contact_transaction.charge %>
-</p>
-
-<p>
-  <strong>Run:</strong>
-  <%= @contact_transaction.run %>
-</p>
-
-<%= link_to 'Edit', edit_contact_transaction_path(@contact_transaction) %> |
-<%= link_to 'Back', contact_transactions_path %>

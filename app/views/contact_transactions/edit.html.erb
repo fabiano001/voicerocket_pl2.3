@@ -1,6 +1,5 @@
-<h1>Editing contact_transaction</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @contact_transaction %> |
-<%= link_to 'Back', contact_transactions_path %>
+<%- model_class = ContactTransaction -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => ContactTransaction %></h1>
+</div>
+<%= render :partial => 'form' %>
