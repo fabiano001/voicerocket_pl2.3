@@ -1,0 +1,22 @@
+<%= simple_form_for(@run_stat) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :run %>
+    <%= f.input :live_answer %>
+    <%= f.input :machine_answer %>
+    <%= f.input :do_not_call %>
+    <%= f.input :no_answer %>
+    <%= f.input :carrier_error %>
+    <%= f.input :busy_signal %>
+    <%= f.input :total_cost %>
+    <%= f.input :total_called %>
+    <%= f.input :total_left_to_call %>
+    <%= f.input :successful_contacts %>
+    <%= f.input :unsuccessful_contacts %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

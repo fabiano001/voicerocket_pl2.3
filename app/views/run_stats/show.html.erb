@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Run:</strong>
+  <%= @run_stat.run %>
+</p>
+
+<p>
+  <strong>Live answer:</strong>
+  <%= @run_stat.live_answer %>
+</p>
+
+<p>
+  <strong>Machine answer:</strong>
+  <%= @run_stat.machine_answer %>
+</p>
+
+<p>
+  <strong>Do not call:</strong>
+  <%= @run_stat.do_not_call %>
+</p>
+
+<p>
+  <strong>No answer:</strong>
+  <%= @run_stat.no_answer %>
+</p>
+
+<p>
+  <strong>Carrier error:</strong>
+  <%= @run_stat.carrier_error %>
+</p>
+
+<p>
+  <strong>Busy signal:</strong>
+  <%= @run_stat.busy_signal %>
+</p>
+
+<p>
+  <strong>Total cost:</strong>
+  <%= @run_stat.total_cost %>
+</p>
+
+<p>
+  <strong>Total called:</strong>
+  <%= @run_stat.total_called %>
+</p>
+
+<p>
+  <strong>Total left to call:</strong>
+  <%= @run_stat.total_left_to_call %>
+</p>
+
+<p>
+  <strong>Successful contacts:</strong>
+  <%= @run_stat.successful_contacts %>
+</p>
+
+<p>
+  <strong>Unsuccessful contacts:</strong>
+  <%= @run_stat.unsuccessful_contacts %>
+</p>
+
+<%= link_to 'Edit', edit_run_stat_path(@run_stat) %> |
+<%= link_to 'Back', run_stats_path %>

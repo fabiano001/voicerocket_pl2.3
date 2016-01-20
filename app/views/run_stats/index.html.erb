@@ -1,0 +1,47 @@
+<h1>Listing run_stats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Run</th>
+      <th>Live answer</th>
+      <th>Machine answer</th>
+      <th>Do not call</th>
+      <th>No answer</th>
+      <th>Carrier error</th>
+      <th>Busy signal</th>
+      <th>Total cost</th>
+      <th>Total called</th>
+      <th>Total left to call</th>
+      <th>Successful contacts</th>
+      <th>Unsuccessful contacts</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @run_stats.each do |run_stat| %>
+      <tr>
+        <td><%= run_stat.run %></td>
+        <td><%= run_stat.live_answer %></td>
+        <td><%= run_stat.machine_answer %></td>
+        <td><%= run_stat.do_not_call %></td>
+        <td><%= run_stat.no_answer %></td>
+        <td><%= run_stat.carrier_error %></td>
+        <td><%= run_stat.busy_signal %></td>
+        <td><%= run_stat.total_cost %></td>
+        <td><%= run_stat.total_called %></td>
+        <td><%= run_stat.total_left_to_call %></td>
+        <td><%= run_stat.successful_contacts %></td>
+        <td><%= run_stat.unsuccessful_contacts %></td>
+        <td><%= link_to 'Show', run_stat %></td>
+        <td><%= link_to 'Edit', edit_run_stat_path(run_stat) %></td>
+        <td><%= link_to 'Destroy', run_stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Run stat', new_run_stat_path %>

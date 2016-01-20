@@ -1,0 +1,1 @@
+json.extract! @run_stat, :id, :run_id, :live_answer, :machine_answer, :do_not_call, :no_answer, :carrier_error, :busy_signal, :total_cost, :total_called, :total_left_to_call, :successful_contacts, :unsuccessful_contacts, :created_at, :updated_at
