@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @run.status %>
+</p>
+
+<p>
+  <strong>Launch:</strong>
+  <%= @run.launch %>
+</p>
+
+<p>
+  <strong>Contact list:</strong>
+  <%= @run.contact_list %>
+</p>
+
+<p>
+  <strong>Campaign:</strong>
+  <%= @run.campaign %>
+</p>
+
+<p>
+  <strong>Voice campaign:</strong>
+  <%= @run.voice_campaign %>
+</p>
+
+<%= link_to 'Edit', edit_run_path(@run) %> |
+<%= link_to 'Back', runs_path %>

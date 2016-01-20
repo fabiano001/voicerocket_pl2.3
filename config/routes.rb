@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :runs
+
   resources :contact_transactions
 
   resources :run_stats
