@@ -29,6 +29,7 @@ class VoiceCampaignsController < ApplicationController
   # POST /voice_campaigns.json
   def create
     @voice_campaign = VoiceCampaign.new(voice_campaign_params)
+    @voice_campaign.user = current_user
 
     respond_to do |format|
       if @voice_campaign.save
