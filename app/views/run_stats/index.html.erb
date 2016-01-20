@@ -1,28 +1,30 @@
-<h1>Listing run_stats</h1>
-
-<table>
+<%- model_class = RunStat -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => RunStat %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Run</th>
-      <th>Live answer</th>
-      <th>Machine answer</th>
-      <th>Do not call</th>
-      <th>No answer</th>
-      <th>Carrier error</th>
-      <th>Busy signal</th>
-      <th>Total cost</th>
-      <th>Total called</th>
-      <th>Total left to call</th>
-      <th>Successful contacts</th>
-      <th>Unsuccessful contacts</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:live_answer) %></th>
+      <th><%= model_class.human_attribute_name(:machine_answer) %></th>
+      <th><%= model_class.human_attribute_name(:do_not_call) %></th>
+      <th><%= model_class.human_attribute_name(:no_answer) %></th>
+      <th><%= model_class.human_attribute_name(:carrier_error) %></th>
+      <th><%= model_class.human_attribute_name(:busy_signal) %></th>
+      <th><%= model_class.human_attribute_name(:total_cost) %></th>
+      <th><%= model_class.human_attribute_name(:total_called) %></th>
+      <th><%= model_class.human_attribute_name(:total_left_to_call) %></th>
+      <th><%= model_class.human_attribute_name(:successful_contacts) %></th>
+      <th><%= model_class.human_attribute_name(:unsuccessful_contacts) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @run_stats.each do |run_stat| %>
       <tr>
-        <td><%= run_stat.run %></td>
+        <td><%= run_stat.id %></td>
         <td><%= run_stat.live_answer %></td>
         <td><%= run_stat.machine_answer %></td>
         <td><%= run_stat.do_not_call %></td>
@@ -34,14 +36,21 @@
         <td><%= run_stat.total_left_to_call %></td>
         <td><%= run_stat.successful_contacts %></td>
         <td><%= run_stat.unsuccessful_contacts %></td>
-        <td><%= link_to 'Show', run_stat %></td>
-        <td><%= link_to 'Edit', edit_run_stat_path(run_stat) %></td>
-        <td><%= link_to 'Destroy', run_stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l run_stat.created_at, format: :long %></td>
+        <td>
+          <%= link_to run_stat_path(run_stat), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to run_stat_path(run_stat), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Run stat', new_run_stat_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_run_stat_path,
+            :class => 'btn btn-primary' %>

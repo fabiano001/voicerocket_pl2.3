@@ -1,22 +1,76 @@
-<%= simple_form_for(@run_stat) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :run %>
-    <%= f.input :live_answer %>
-    <%= f.input :machine_answer %>
-    <%= f.input :do_not_call %>
-    <%= f.input :no_answer %>
-    <%= f.input :carrier_error %>
-    <%= f.input :busy_signal %>
-    <%= f.input :total_cost %>
-    <%= f.input :total_called %>
-    <%= f.input :total_left_to_call %>
-    <%= f.input :successful_contacts %>
-    <%= f.input :unsuccessful_contacts %>
+<%= form_for @run_stat, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :live_answer, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :live_answer, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :machine_answer, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :machine_answer, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :do_not_call, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :do_not_call, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :no_answer, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :no_answer, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :carrier_error, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :carrier_error, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :busy_signal, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :busy_signal, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :total_cost, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :total_cost, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :total_called, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :total_called, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :total_left_to_call, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :total_left_to_call, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :successful_contacts, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :successful_contacts, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :unsuccessful_contacts, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :unsuccessful_contacts, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  run_stats_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

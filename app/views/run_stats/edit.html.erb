@@ -1,6 +1,5 @@
-<h1>Editing run_stat</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @run_stat %> |
-<%= link_to 'Back', run_stats_path %>
+<%- model_class = RunStat -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => RunStat %></h1>
+</div>
+<%= render :partial => 'form' %>
