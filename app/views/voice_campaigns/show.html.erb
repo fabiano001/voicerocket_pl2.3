@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @voice_campaign.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @voice_campaign.user %>
+</p>
+
+<%= link_to 'Edit', edit_voice_campaign_path(@voice_campaign) %> |
+<%= link_to 'Back', voice_campaigns_path %>
