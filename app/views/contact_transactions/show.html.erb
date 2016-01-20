@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Phone numer:</strong>
+  <%= @contact_transaction.phone_numer %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @contact_transaction.genre %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @contact_transaction.duration %>
+</p>
+
+<p>
+  <strong>Charge:</strong>
+  <%= @contact_transaction.charge %>
+</p>
+
+<p>
+  <strong>Run:</strong>
+  <%= @contact_transaction.run %>
+</p>
+
+<%= link_to 'Edit', edit_contact_transaction_path(@contact_transaction) %> |
+<%= link_to 'Back', contact_transactions_path %>

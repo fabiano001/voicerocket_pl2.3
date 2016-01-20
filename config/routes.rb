@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :contact_transactions
+
   resources :run_stats
 
   resources :voice_campaigns
