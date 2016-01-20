@@ -1,6 +1,5 @@
-<h1>Editing voice_campaign</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @voice_campaign %> |
-<%= link_to 'Back', voice_campaigns_path %>
+<%- model_class = VoiceCampaign -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => VoiceCampaign %></h1>
+</div>
+<%= render :partial => 'form' %>

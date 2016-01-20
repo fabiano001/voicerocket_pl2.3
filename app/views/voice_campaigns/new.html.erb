@@ -1,5 +1,6 @@
-<h1>New voice_campaign</h1>
+<%- model_class = VoiceCampaign -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => VoiceCampaign %></h1>
+</div>
+<%= render :partial => 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', voice_campaigns_path %>
