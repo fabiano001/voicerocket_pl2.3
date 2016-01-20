@@ -1,6 +1,5 @@
-<h1>Editing contact_list</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @contact_list %> |
-<%= link_to 'Back', contact_lists_path %>
+<%- model_class = ContactList -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => ContactList %></h1>
+</div>
+<%= render :partial => 'form' %>
