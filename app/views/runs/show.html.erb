@@ -1,29 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Run -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Run %></h1>
+</div>
 
-<p>
-  <strong>Status:</strong>
-  <%= @run.status %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:status) %></dt>
+      <dd><pre class="prettyprint"><%= @run.status %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:launch) %></dt>
+      <dd><pre class="prettyprint"><%= @run.launch %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Launch:</strong>
-  <%= @run.launch %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              runs_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_run_path(@run), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              run_path(@run),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Contact list:</strong>
-  <%= @run.contact_list %>
-</p>
-
-<p>
-  <strong>Campaign:</strong>
-  <%= @run.campaign %>
-</p>
-
-<p>
-  <strong>Voice campaign:</strong>
-  <%= @run.voice_campaign %>
-</p>
-
-<%= link_to 'Edit', edit_run_path(@run) %> |
-<%= link_to 'Back', runs_path %>
